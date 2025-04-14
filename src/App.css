@@ -1,0 +1,99 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+  width: 100%;
+  max-width: 800px;
+  min-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(14, 13, 13);
+  padding: 20px 40px;
+  border-radius: 8px;
+}
+
+.logo{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.title{
+  font-size: 35px;
+}
+
+.checkboxGrid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 16px;
+}
+
+.button{
+  background-color: rgb(7, 189, 32);
+  margin-top: 20px;
+  margin-bottom: 35px;
+  padding: 10px 60px 10px 60px;
+  transition: 0.5s;
+}
+
+.button:hover{
+  scale: 1.1;
+}
+
+.containerPassword{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.password{
+  position: relative;
+  background-color: black;
+  padding: 10px 60px 10px 60px;
+  margin-top: 8px;
+  border: solid 1px;
+  border-color: rgba(255, 235, 205, 0.267);
+}
+
+.buttonIcon{
+  position: absolute;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.buttonIcon:hover{
+  opacity: 0.6;
+}
+
+.buttonIcon:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+.icon{
+  width: 20px;
+  height: 20px;
+}
+
+.copiedMessage{
+  position: absolute;
+  right: -6.2rem;
+  color: black;
+  background-color: white;
+  padding: 4px;
+  border-radius: 8px;
+  margin-left: 10px;
+  font-size: 12px;
+}
