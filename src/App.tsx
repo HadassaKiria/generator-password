@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Slider, Checkbox, FormControlLabel } from '@mui/material'
-import generator from 'generate-password-browser'
 import { CopyIcon } from 'lucide-react'
+import { ToastContainer, toast } from 'react-toastify'
 
+import generator from 'generate-password-browser'
 import imageLogo from "./assets/generator-password.jpg"
 import './App.css'
 
@@ -13,7 +14,6 @@ function PasswordGenerator(){
   const [includeUppercase, setIncludeUppercase] = useState(true);
   const [includeLowercase, setIncludeLowercase] = useState(true);
   const [password, setPassword] = useState('');
-  const [copied, setCopied] = useState(false);
 
   const handleChange = (_event: Event, value: number) => {
     setValue(value);
@@ -35,14 +35,11 @@ function PasswordGenerator(){
   const copyPassword = async () => {
     try {
       await navigator.clipboard.writeText(password)
-      setCopied(true)
-
-      setTimeout(() => {
-        setCopied(false)
-      }, 2000)
+      toast.success("Senha copiada com sucesso!")
 
     } catch (err) {
-      console.log('Erro ao copiar senha', err)
+      toast.warn("Erro ao copiar senha!")
+      return;
     }
   }
 
@@ -129,12 +126,12 @@ function PasswordGenerator(){
             {password}
             <button className='buttonIcon' onClick={copyPassword}>
               <CopyIcon className='icon'/>
-            </button>
-
-            {copied && <span className='copiedMessage'>Senha Copiada!</span>}
+            </button>       
           </div>
         </div>
       )}
+
+      <ToastContainer autoClose={3000}/>
     </div>
   )
 }
