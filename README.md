@@ -21,7 +21,7 @@ Este é um aplicativo simples e intuitivo para gerar senhas aleatórias com base
 
 ## 📸 Preview
 
-![screenshot do projeto](./assets/print.png.png)
+![screenshot do projeto](/src/assets/print.png.png)
 
 ---
 
