@@ -20,6 +20,11 @@ function PasswordGenerator(){
   }
 
   const generatePassword = () => {
+    if(!includeNumbers && !includeSymbols && !includeUppercase && !includeLowercase){
+      toast.warn("Selecione pelo menos uma das opções!")
+      return;
+    }
+
     const newPassword = generator.generate({
     length: value,
     numbers: includeNumbers,
